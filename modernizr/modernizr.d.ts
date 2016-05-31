@@ -3,7 +3,7 @@
 // Definitions by: Boris Yankov <https://github.com/borisyankov/>, Theodore Brown <https://github.com/theodorejb/>, Leon Yu <https://github.com/leonyu/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-declare namespace __Modernizr {
+declare module "modernizr" {
     interface AudioBoolean {
         ogg: boolean;
         mp3: boolean;
@@ -373,7 +373,9 @@ declare namespace __Modernizr {
         testStyles(rule: string, callback: (elem: HTMLDivElement, rule: string) => void, nodes?: number, testnames?: string[]): boolean;
     }
 
-    export interface ModernizrStatic extends ModernizrAPI, FeatureDetects { }
-}
+    interface ModernizrStatic extends ModernizrAPI, FeatureDetects { }
 
-declare var Modernizr: __Modernizr.ModernizrStatic;
+    var Modernizr: ModernizrStatic;
+
+    export = Modernizr;
+}
